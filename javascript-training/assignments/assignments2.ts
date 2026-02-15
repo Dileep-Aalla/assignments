@@ -7,20 +7,20 @@ function loanEvaltion(
 ): void {
   if (creditScore > 750) {
     console.log(`Loan is Approved for${employeeName}`);
-  } else if (creditScore > 650 && creditScore < 750)
+  } else if (creditScore >= 650 && creditScore <= 750)
     if (income < 50000) {
       console.log(
         `${employeeName} loan is Rejected due to low income,income must be >50000`,
       );
-    } else {
+    } else{
       if (!IsEmployed) {
         console.log(`${employeeName} loan denied because he is not employed`);
-      } else {
+      }
+       else {
         if (debtToTotalIncomeRatio < 40) {
           console.log(`${employeeName} loan is Approved`);
         } else {
-          console.log(
-            `${employeeName} loan is Not Approved due to income ratio is more than 40 `,
+          console.log(`${employeeName} loan is Not Approved due to income ratio is more than 40 `,
           );
         }
       }
@@ -29,4 +29,4 @@ function loanEvaltion(
     console.log(`${employeeName} loan is not Approved`);
   }
 }
-loanEvaltion("John Doe", 720, 55000.0, true, 45);
+loanEvaltion("John Doe", 750, 55000.0, true, 45);
